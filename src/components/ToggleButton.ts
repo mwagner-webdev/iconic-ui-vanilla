@@ -22,7 +22,7 @@ export default class ToggleButton extends HTMLElement {
       }
     }
 
-    this.createContent(`
+    this.html`
       <div class="switch">
         <div class="switch-track">
           <input id="${id}" type="checkbox">
@@ -30,7 +30,7 @@ export default class ToggleButton extends HTMLElement {
           ${label ? `<label for="${id}">${label.innerHTML}</label>` : ``}
         </div>
       </div>
-    `);
+    `;
 
     this.checkbox = this.shadow.querySelector('input');
     this.shadow.querySelector('span')?.addEventListener('click', () => {
@@ -114,9 +114,16 @@ export default class ToggleButton extends HTMLElement {
     this.shadow.appendChild(style);
   }
 
-  private createContent(content: string) {
-    this.shadow.innerHTML += content;
+  private html(content: TemplateStringsArray, ...values: any[]): void {
+    const str = content.reduce((result, string, i) => {
+      return result + string + (values[i] || '');
+    }, '');
+    this.shadow.innerHTML += str;
   }
+}
+
+export function createToggleButton() {
+  return new ToggleButton();
 }
 
 customElements.define('iconic-toggle-button', ToggleButton);
