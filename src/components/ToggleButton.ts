@@ -1,17 +1,14 @@
-export default class ToggleButton extends HTMLElement {
-  shadow: ShadowRoot;
+import IconicComponent from "../IconicComponent";
+
+export default class ToggleButton extends IconicComponent {
   checkbox: HTMLInputElement | null;
 
   constructor() {
     super();
 
-    this.shadow = this.attachShadow({ mode: 'open' });
-
-    this.applyStyles();
-
-    const id = this.attributeByName('id')?.value;
+    const id = this.attributeByName("id")?.value;
     if (!id) {
-      console.warn('No ID specified!');
+      console.warn("No ID specified!");
     }
     let label: Element | null = null;
     if (id) {
@@ -22,35 +19,7 @@ export default class ToggleButton extends HTMLElement {
       }
     }
 
-    this.html`
-      <div class="switch">
-        <div class="switch-track">
-          <input id="${id}" type="checkbox">
-          <span></span>
-          ${label ? `<label for="${id}">${label.innerHTML}</label>` : ``}
-        </div>
-      </div>
-    `;
-
-    this.checkbox = this.shadow.querySelector('input');
-    this.shadow.querySelector('span')?.addEventListener('click', () => {
-      if (this.checkbox) {
-        this.checkbox.checked = !this.checkbox.checked;
-      }
-    });
-  }
-
-  findLabel(id: string) {
-    return this.parentElement?.querySelector(`label[for='${id}']`) ?? null;
-  }
-
-  private attributeByName(name: string) {
-    return Array.from(this.attributes).find(attr => attr.name === name);
-  }
-
-  private applyStyles() {
-    const style = document.createElement('style');
-    style.textContent = `
+    this.css`
       .switch {
         box-sizing: border-box;
 
@@ -111,14 +80,31 @@ export default class ToggleButton extends HTMLElement {
         background: var(--greyLight-1);
       }
     `;
-    this.shadow.appendChild(style);
+
+    this.html`
+      <div class="switch">
+        <div class="switch-track">
+          <input id="${id}" type="checkbox">
+          <span></span>
+          ${label ? `<label for="${id}">${label.innerHTML}</label>` : ``}
+        </div>
+      </div>
+    `;
+
+    this.checkbox = this.shadow.querySelector("input");
+    this.shadow.querySelector("span")?.addEventListener("click", () => {
+      if (this.checkbox) {
+        this.checkbox.checked = !this.checkbox.checked;
+      }
+    });
   }
 
-  private html(content: TemplateStringsArray, ...values: any[]): void {
-    const str = content.reduce((result, string, i) => {
-      return result + string + (values[i] || '');
-    }, '');
-    this.shadow.innerHTML += str;
+  findLabel(id: string) {
+    return this.parentElement?.querySelector(`label[for='${id}']`) ?? null;
+  }
+
+  private attributeByName(name: string) {
+    return Array.from(this.attributes).find((attr) => attr.name === name);
   }
 }
 
@@ -126,4 +112,4 @@ export function createToggleButton() {
   return new ToggleButton();
 }
 
-customElements.define('iconic-toggle-button', ToggleButton);
+customElements.define("iconic-toggle-button", ToggleButton);
