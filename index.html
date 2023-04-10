@@ -10,17 +10,20 @@
         --primary: #549bfc;
         --primary-dark: #0c71e9;
         --white: #ffffff;
-        --greyLight-1: #e4ebf5;
-        --greyLight-2: #c8d0e7;
-        --greyLight-3: #bec8e4;
-        --greyDark: #9baacf;
+        --grey-light-0: #eff3fa;
+        --grey-light-1: #e4ebf5;
+        --grey-light-2: #c8d0e7;
+        --grey-light-3: #bec8e4;
+        --grey-dark: #9baacf;
+        --accordion-bg: #e4ebf5;
+        --bg-light: #ffffff33;
       }
 
       html {
         box-sizing: border-box;
         font-size: 62.5%;
         overflow-y: scroll;
-        background: var(--greyLight-1);
+        background: var(--grey-light-1);
       }
       @media screen and (min-width: 900px) {
         html {
@@ -81,6 +84,11 @@
             <h2 class="title">Basis der Funktionalität wählen</h2>
             <p class="decription">Erklärung zur Basis der Funktionalität</p>
             <label for="pdf">PDF Export</label> <iconic-toggle-button name="pdf" id="pdf">
+          </div>
+        </div>
+        <div class="general-settings">
+          <div class="inline-settings">
+            <iconic-button onclick="alert('abc');">Helli <b>Hallo</b></iconic-button>
           </div>
         </div>
       </div>

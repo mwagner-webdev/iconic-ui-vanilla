@@ -41,7 +41,7 @@ export default class ToggleButton extends IconicComponent {
         align-items: center;
         width: 100%;
         height: 3rem;
-        box-shadow: 0.3rem 0.3rem 0.6rem var(--greyLight-2),
+        box-shadow: 0.3rem 0.3rem 0.6rem var(--grey-light-2),
           -0.2rem -0.2rem 0.5rem var(--white);
         background: rgba(255, 255, 255, 0);
         position: relative;
@@ -55,7 +55,7 @@ export default class ToggleButton extends IconicComponent {
         width: 2.1rem;
         height: 2.1rem;
         border-radius: 50%;
-        background: var(--greyDark);
+        background: var(--grey-dark);
         transition: all 0.4s ease;
       }
       .switch-track span::before {
@@ -77,7 +77,7 @@ export default class ToggleButton extends IconicComponent {
       }
       .switch input:checked ~ span::after {
         left: 57%;
-        background: var(--greyLight-1);
+        background: var(--grey-light-1);
       }
     `;
 

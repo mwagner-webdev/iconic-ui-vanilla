@@ -1,3 +1,4 @@
 import ToggleButton from "./components/ToggleButton";
+import Button from "./components/Button";
 
-export default ToggleButton;
+export { ToggleButton, Button };
