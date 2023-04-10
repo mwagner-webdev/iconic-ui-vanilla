@@ -22,23 +22,7 @@
       }
 
       iconic-dark-mode {
-        --primary-light: #af8f30;
-        --primary: #d56e15;
-        --primary-dark: #5a3d05;
-        --white: #e7b877;
-        --black: #000000;
-        --grey-light-0: #cd7b1d62;
-        --grey-light-1: #1c1d20;
-        --grey-light-2: #383126;
-        --grey-light-3: #c1d0de;
-        --grey-dark: #625548;
-        --accordion-bg: #1d1e1f;
-        --bg-light: #ffffffc6;
-        --foreground-default: #fefefe;
-
         display: block;
-        background: var(--grey-light-1);
-        color: var(--foreground-default);
       }
 
       html {
@@ -65,12 +49,13 @@
         justify-content: center;
         align-items: center;
         font-family: "Poppins", sans-serif;
-        background: var(--greyLight-1);
+        background: var(--grey-light-1);
+        color: var(--foreground-default);
       }
 
       .components {
         border-radius: 3rem;
-        box-shadow: 0.8rem 0.8rem 1.4rem var(--greyLight-2),
+        box-shadow: 0.8rem 0.8rem 1.4rem var(--grey-light-2),
           -0.2rem -0.2rem 1.8rem var(--white);
         padding: 4rem;
         margin: 30px;
@@ -102,10 +87,11 @@
     </style>
   </head>
   <body>
-    <iconic-dark-mode>
+    <iconic-dark-mode enabled="true">
       <h1 class="title">Iconic UI Demo</h1>
       <div class="container">
         <div class="components">
+          <label for="dm">Light mode</label> <iconic-toggle-button name="dm" id="dm"></iconic-toggle-button>
           <div class="general-settings">
             <div class="inline-settings">
               <h2 class="title">Basis der Funktionalität wählen</h2>
@@ -115,7 +101,7 @@
             <div class="inline-settings">
               <h2 class="title">2. Basis der Funktionalität wählen</h2>
               <p class="decription">Erklärung zur Basis der Funktionalität</p>
-              <label for="pdf">BMD CSV Export</label> <iconic-toggle-button name="pdf" id="pdf">
+              <label for="bmd">BMD CSV Export</label> <iconic-toggle-button name="bmd" id="bmd">
             </div>
           </div>
           <div class="general-settings">
@@ -127,5 +113,13 @@
         </div>
       </div>
     </iconic-dark-mode>
+
+    <script>
+      document.getElementById("dm").addEventListener("click", () => {
+        const dm = document.querySelector("iconic-dark-mode");
+        console.log(dm, dm.enabled);
+        dm.enabled = !dm.enabled;
+      })
+    </script>
   </body>
 </html>
