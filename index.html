@@ -18,6 +18,7 @@
         --grey-dark: #9baacf;
         --accordion-bg: #e4ebf5;
         --bg-light: #ffffff33;
+        --foreground-default: var(--black);
       }
 
       iconic-dark-mode {
@@ -33,9 +34,11 @@
         --grey-dark: #625548;
         --accordion-bg: #1d1e1f;
         --bg-light: #ffffffc6;
+        --foreground-default: #fefefe;
 
         display: block;
         background: var(--grey-light-1);
+        color: var(--foreground-default);
       }
 
       html {
@@ -66,7 +69,6 @@
       }
 
       .components {
-        min-width: 75rem;
         border-radius: 3rem;
         box-shadow: 0.8rem 0.8rem 1.4rem var(--greyLight-2),
           -0.2rem -0.2rem 1.8rem var(--white);
@@ -94,6 +96,9 @@
         gap: 3em;
         margin: 30px 0;
       }
+      .last-step {
+        justify-content: flex-end;
+      }
     </style>
   </head>
   <body>
@@ -107,9 +112,14 @@
               <p class="decription">Erklärung zur Basis der Funktionalität</p>
               <label for="pdf">PDF Export</label> <iconic-toggle-button name="pdf" id="pdf">
             </div>
+            <div class="inline-settings">
+              <h2 class="title">2. Basis der Funktionalität wählen</h2>
+              <p class="decription">Erklärung zur Basis der Funktionalität</p>
+              <label for="pdf">BMD CSV Export</label> <iconic-toggle-button name="pdf" id="pdf">
+            </div>
           </div>
           <div class="general-settings">
-            <div class="inline-settings">
+            <div class="inline-settings last-step">
               <iconic-button onclick="alert('abc');">Abbrechen</iconic-button>
               <iconic-button onclick="alert('abc');" iconic-style="action">Speichern</iconic-button>
             </div>

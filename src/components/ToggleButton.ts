@@ -27,7 +27,6 @@ export default class ToggleButton extends IconicComponent {
         display: grid;
         grid-template-columns: repeat(2, -webkit-min-content);
         grid-template-columns: repeat(2, min-content);
-        grid-gap: 3rem;
         justify-self: center;
       }
       .switch input {
@@ -78,6 +77,10 @@ export default class ToggleButton extends IconicComponent {
       .switch input:checked ~ span::after {
         left: 57%;
         background: var(--grey-light-1);
+      }
+      label {
+        display: block;
+        margin-top: 1em;
       }
     `;
 

@@ -12,7 +12,7 @@ export default class Button extends IconicComponent {
     this.style.setProperty("--background-light", "var(--grey-light-0)");
     this.style.setProperty("--background-dark", "var(--grey-light-2)");
     this.style.setProperty("--foreground", "var(--primary)");
-    this.style.setProperty("--foreground-highlight", "var(--black)");
+    this.style.setProperty("--foreground-highlight", "var(--white)");
 
 
     this.css`
@@ -65,7 +65,6 @@ export default class Button extends IconicComponent {
       this.style.setProperty("--background-light", "var(--primary-light)");
       this.style.setProperty("--background-dark", "var(--primary-dark)");
       this.style.setProperty("--foreground", "var(--grey-light-1)");
-      this.style.setProperty("--foreground-highlight", "var(--white)");
     }
   }
 }
