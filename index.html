@@ -10,6 +10,7 @@
         --primary: #549bfc;
         --primary-dark: #0c71e9;
         --white: #ffffff;
+        --black: #000000;
         --grey-light-0: #eff3fa;
         --grey-light-1: #e4ebf5;
         --grey-light-2: #c8d0e7;
@@ -19,16 +20,36 @@
         --bg-light: #ffffff33;
       }
 
+      iconic-dark-mode {
+        --primary-light: #af8f30;
+        --primary: #d56e15;
+        --primary-dark: #5a3d05;
+        --white: #e7b877;
+        --black: #000000;
+        --grey-light-0: #cd7b1d62;
+        --grey-light-1: #1c1d20;
+        --grey-light-2: #383126;
+        --grey-light-3: #c1d0de;
+        --grey-dark: #625548;
+        --accordion-bg: #1d1e1f;
+        --bg-light: #ffffffc6;
+
+        display: block;
+        background: var(--grey-light-1);
+      }
+
       html {
         box-sizing: border-box;
         font-size: 62.5%;
         overflow-y: scroll;
-        background: var(--grey-light-1);
       }
       @media screen and (min-width: 900px) {
         html {
           font-size: 75%;
         }
+      }
+      body {
+        margin: 0;
       }
       .title {
         margin: 0;
@@ -76,23 +97,25 @@
     </style>
   </head>
   <body>
-    <h1>Iconic UI Demo</h1>
-    <div class="container">
-      <div class="components">
-        <div class="general-settings">
-          <div class="inline-settings">
-            <h2 class="title">Basis der Funktionalität wählen</h2>
-            <p class="decription">Erklärung zur Basis der Funktionalität</p>
-            <label for="pdf">PDF Export</label> <iconic-toggle-button name="pdf" id="pdf">
+    <iconic-dark-mode>
+      <h1 class="title">Iconic UI Demo</h1>
+      <div class="container">
+        <div class="components">
+          <div class="general-settings">
+            <div class="inline-settings">
+              <h2 class="title">Basis der Funktionalität wählen</h2>
+              <p class="decription">Erklärung zur Basis der Funktionalität</p>
+              <label for="pdf">PDF Export</label> <iconic-toggle-button name="pdf" id="pdf">
+            </div>
           </div>
-        </div>
-        <div class="general-settings">
-          <div class="inline-settings">
-            <iconic-button onclick="alert('abc');">Abbrechen</iconic-button>
-            <iconic-button onclick="alert('abc');" iconic-style="action">Speichern</iconic-button>
+          <div class="general-settings">
+            <div class="inline-settings">
+              <iconic-button onclick="alert('abc');">Abbrechen</iconic-button>
+              <iconic-button onclick="alert('abc');" iconic-style="action">Speichern</iconic-button>
+            </div>
           </div>
         </div>
       </div>
-    </div>
+    </iconic-dark-mode>
   </body>
 </html>

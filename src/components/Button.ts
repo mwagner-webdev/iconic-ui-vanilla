@@ -12,7 +12,7 @@ export default class Button extends IconicComponent {
     this.style.setProperty("--background-light", "var(--grey-light-0)");
     this.style.setProperty("--background-dark", "var(--grey-light-2)");
     this.style.setProperty("--foreground", "var(--primary)");
-    this.style.setProperty("--foreground-highlight", "var(--primary-light)");
+    this.style.setProperty("--foreground-highlight", "var(--black)");
 
 
     this.css`
