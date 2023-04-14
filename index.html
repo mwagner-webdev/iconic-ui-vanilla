@@ -37,7 +37,16 @@
       }
       body {
         margin: 0;
+        font-family: "Poppins", sans-serif;
       }
+
+      h1 {
+        color: var(--foreground-default);
+        text-transform: uppercase;
+        padding: 1em 0;
+        text-align: center;
+      }
+
       .title {
         margin: 0;
       }
@@ -48,7 +57,6 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        font-family: "Poppins", sans-serif;
         background: var(--grey-light-1);
         color: var(--foreground-default);
       }
@@ -106,8 +114,8 @@
           </div>
           <div class="general-settings">
             <div class="inline-settings last-step">
-              <iconic-button onclick="alert('abc');">Abbrechen</iconic-button>
-              <iconic-button onclick="alert('abc');" iconic-style="action">Speichern</iconic-button>
+              <iconic-button>Abbrechen</iconic-button>
+              <iconic-button iconic-style="action">Speichern</iconic-button>
             </div>
           </div>
         </div>
