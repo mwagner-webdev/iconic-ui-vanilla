@@ -54,7 +54,7 @@ export default class ToggleButton extends IconicComponent {
         width: 2.1rem;
         height: 2.1rem;
         border-radius: 50%;
-        background: var(--grey-dark);
+        background: var(--primary);
         transition: all 0.4s ease;
       }
       .switch-track span::before {
