@@ -40,7 +40,7 @@ export default class ToggleButton extends IconicComponent {
         align-items: center;
         width: 100%;
         height: 3rem;
-        box-shadow: 0.3rem 0.3rem 0.6rem var(--grey-light-2),
+        box-shadow: 0.3rem 0.3rem 0.6rem var(--outer-shadow-color),
           -0.2rem -0.2rem 0.5rem var(--white);
         background: rgba(255, 255, 255, 0);
         position: relative;
