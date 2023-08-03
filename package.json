@@ -13,6 +13,6 @@
   "devDependencies": {
     "rollup-plugin-minify-html-literals": "^1.2.6",
     "typescript": "^5.0.2",
-    "vite": "^4.2.1"
+    "vite": "^4.2.3"
   }
 }
