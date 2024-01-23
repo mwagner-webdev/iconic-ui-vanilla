@@ -19,6 +19,10 @@
         --accordion-bg: #e4ebf5;
         --bg-light: #ffffff33;
         --foreground-default: var(--black);
+        --shadow-color: rgba(255, 255, 255, 0.3);
+        --shadow-color-light: rgba(1, 1, 1, 0.1);
+        --outer-shadow-color: rgba(1, 1, 1, 0.1);
+        --iconic-invert: var(--black);
       }
 
       iconic-dark-mode {
@@ -63,7 +67,7 @@
 
       .components {
         border-radius: 3rem;
-        box-shadow: 0.8rem 0.8rem 1.4rem var(--grey-light-2),
+        box-shadow: 0.8rem 0.8rem 1.4rem transparent, /* warum eigentlich der 2. schatten? */
           -0.2rem -0.2rem 1.8rem var(--white);
         padding: 4rem;
         margin: 30px;

@@ -14,7 +14,6 @@ export default class Button extends IconicComponent {
     this.style.setProperty("--foreground", "var(--primary)");
     this.style.setProperty("--foreground-highlight", "var(--white)");
 
-
     this.css`
       .button-inner {
         margin: 0;
@@ -26,21 +25,17 @@ export default class Button extends IconicComponent {
         justify-content: center;
         cursor: pointer;
         transition: 0.3s ease;
-
+        
         background: var(--background);
-        box-shadow: inset 0.2rem 0.2rem 1rem var(--background-light),
-          inset -0.2rem -0.2rem 1rem var(--background-dark),
-          0.3rem 0.3rem 0.6rem var(--grey-light-2),
-          -0.2rem -0.2rem 0.5rem var(--white);
+        box-shadow: 0.3rem 0.3rem 0.5rem var(--outer-shadow-color), -0.2rem -0.2rem 0.4rem var(--white);
         color: var(--foreground);
         text-transform: uppercase;
       }
       .button-inner:hover {
-        color: var(--foreground-highlight);
+        color: var(--iconic-invert);
       }
       .button-inner:active {
-        box-shadow: inset 0.2rem 0.2rem 1rem var(--background-dark),
-          inset -0.2rem -0.2rem 1rem var(--background-light);
+        box-shadow: 0rem 0rem 0rem var(--outer-shadow-color), -0rem -0rem 0rem var(--white), inset 0.2rem 0.2rem 0.5rem var(--outer-shadow-color), inset -0.2rem -0.2rem 0.5rem var(--white);
       }
       button, button:hover, button:active, button:focus {
         border: 0;
@@ -49,6 +44,21 @@ export default class Button extends IconicComponent {
         align-items: center;
         font-family: "Poppins", sans-serif;
         background: transparent;
+      }
+      .action {
+        background: linear-gradient(
+          330deg,
+          var(--primary-dark) 0%,
+          var(--primary) 50%,
+          var(--primary-light) 100%
+        );
+        color: #fff;
+      }
+      .action:hover, .action:active {
+        color: var(--black);
+      }
+      .action:active {
+        box-shadow: 0rem 0rem 0rem var(--outer-shadow-color), -0rem -0rem 0rem var(--white), inset 0.2rem 0.2rem 0.5rem var(--primary-dark), inset -0.2rem -0.2rem 0.5rem var(--primary);
       }
     `;
 
@@ -60,11 +70,14 @@ export default class Button extends IconicComponent {
   }
   attributeChangedCallback(name: string, _: any, newValue: string) {
     console.log(name, _, newValue);
-    if (name === "iconic-style") {
-      this.style.setProperty("--background", "var(--primary)");
-      this.style.setProperty("--background-light", "var(--primary-light)");
+    if (name === "iconic-style" && newValue === "action") {
+      this.shadow.querySelector(".button-inner")?.classList.add("action");
+      //this.style.setProperty("--background", "var(--primary)");
+      //this.style.setProperty("--foreground", "var(--grey-light-1)");
+      //this.style.setProperty("--outer-shadow-color", "var(--grey-light-1)");
+      /*this.style.setProperty("--background-light", "var(--primary-light)");
       this.style.setProperty("--background-dark", "var(--primary-dark)");
-      this.style.setProperty("--foreground", "var(--grey-light-1)");
+      */
     }
   }
 }
